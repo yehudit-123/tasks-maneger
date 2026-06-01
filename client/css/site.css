@@ -1,0 +1,49 @@
+
+body {
+  background-color: rgb(218, 251, 251);
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* כותרת */
+h1 {
+  text-align: center;
+  margin: 10px;
+}
+
+/* אזור התוכן הראשי */
+main {
+  display: flex;
+  flex: 1;
+  padding: 2%;
+  gap: 2%; 
+}
+
+/* תפריט הצד (options) */
+#options {
+  width: 20%;
+  background-color: #f0f0f0;
+  padding: 15px;
+  border: 1px solid #d4d4d4;
+  border-radius: 8px;
+  height: min-content;
+  box-shadow: 0 0 8px rgb(1, 136, 136);
+}
+
+/* הלוח המרכזי */
+#board {
+  width: 60%;
+  background-color: #ffffff;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  height: 60%;
+  box-shadow: 0 0 8px rgb(1, 136, 136);
+  overflow-y: auto;
+}
+button{
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+
+}
