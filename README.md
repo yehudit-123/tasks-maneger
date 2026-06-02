@@ -14,6 +14,7 @@ Task Manager היא מערכת המדמה סביבת עבודה משרדית, ש
 
 ---
 ## תכונות עיקריות
+
 ### מנהל
 - הוספת מזכירות חדשות
 - עריכת פרטי מזכירה
@@ -64,7 +65,6 @@ Task Manager היא מערכת המדמה סביבת עבודה משרדית, ש
 - עבודה בשכבות
 - סימולציית Client-Server
 - ניהול מידע באמצעות Local Storage
-- CRUD Operations
 - תכנון מערכת לפני פיתוח
 - הפרדת אחריות בין רכיבי המערכת
 - סינון וחיפוש מידע
@@ -73,33 +73,23 @@ Task Manager היא מערכת המדמה סביבת עבודה משרדית, ש
 
 ## מבנה הפרויקט
 
-```text
 client/
 ├── html/
 ├── css/
 └── js/
-
 server_tasks/
-
+server_users/
 DataBase/
-
 DNS server/
-
 net/
-```
 
 ---
 
-## התקנה והרצה
+## הרצה
 
 1. הורידו את כל קבצי הפרויקט.
 2. שמרו על מבנה התיקיות המקורי.
-3. פתחו את הקובץ:
-
-```text
-client/html/site.html
-```
-
+3. פתחו את הקובץ: client/html/site.html
 4. המערכת תופעל בדפדפן.
 
 ---
@@ -113,14 +103,12 @@ client/html/site.html
 ### מסך מנהל
 
 ![Manager Screen](screenshots/manager.png)
+![Manager Screen](screenshots/manager2.png)
+
 
 ### מסך מזכירה
 
 ![Secretary Screen](screenshots/secretary.png)
-
-### מסך ניהול משימות
-
-![Tasks Screen](screenshots/tasks.png)
 
 ---
 
@@ -145,3 +133,6 @@ client/html/site.html
 פרויקט סיום קורס Full Stack (FS)  
 שנה א'  
 המרכז האקדמי לב
+
+## הערות
+בשל אופי הפרוייקט והייעוד שלו הדאטה בייס נבנה בצורה ידנית והוטען לlocal storage.
