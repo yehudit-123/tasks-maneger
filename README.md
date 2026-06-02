@@ -77,10 +77,15 @@ client/
 ├── html/
 ├── css/
 └── js/
+
 server_tasks/
+
 server_users/
+
 DataBase/
+
 DNS server/
+
 net/
 
 ---
@@ -135,4 +140,4 @@ net/
 המרכז האקדמי לב
 
 ## הערות
-בשל אופי הפרוייקט והייעוד שלו הדאטה בייס נבנה בצורה ידנית והוטען לlocal storage.
+בשל אופי הפרוייקט והמטרה שלו הדאטה בייס נבנה בצורה ידנית והוטען לlocal storage.
