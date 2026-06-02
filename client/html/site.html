@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>taskSite</title>
+    <link rel="stylesheet" href="../css/site.css">
+</head>
+
+<body>
+    <h1 id="title_page">hello to our tasksite project! <br>,please log in</h1>
+
+    <main>
+        <div id="options">
+
+        </div>
+        <div id="board">
+
+
+        </div>
+    </main>
+
+    <!-- template -->
+
+    <template id="logInPage" >
+      
+        <h2>log in</h2>
+            <label for="loginName">user name:</label>
+            <input type="text" id="loginName" placeholder="Enter your username" required><br>
+            <label for="loginId">user id:</label>
+            <input type="text" id="loginId" placeholder="Enter your id, 4 chars" maxlength="4" pattern="\d{4}"
+                required><br>
+            <label for="loginPassword">password: (6)</label>
+            <input type="password" id="loginPassword" placeholder="Enter your password, 6 chars" maxlength="6"
+                pattern="\d{6}" required><br>
+            <button onclick="funlogin()">log in</button>
+       
+    </template>
+    <template id="logInOptions">
+        <p>(לגישת המתכנת...)</p>
+        <button onclick="secretaryPage()">secretary page:</button><br>
+        <button onclick="manegerPage()">maneger page:</button><br>
+    </template>
+    <template id="manegerOptions">
+        <button onclick="changPage('add_sec')">add seretary</button><br><br>
+        <button onclick="changPage('add_task')">add task</button><br><br>
+        <button onclick="changPage('show_all_sec')">show all secretary</button><br><br>
+        <button onclick="changPage('show_sec')">show secretary</button><br><br>
+        <button onclick="changPage('show_all_task')">show all task</button><br><br>
+        <!-- <button onclick="changPage('chang_task')">change task</button><br><br> -->
+        <button onclick="changProfile()">profile</button><br><br>
+        <button onclick="exit()">exit</button><br><br>
+    </template>
+    <template id="secOptions">
+        <button onclick="exit()">exit</button><br><br>
+    </template>
+</template>
+    <template id="add_sec">
+        <fieldset >
+            <legend>to add secretary</legend>
+            <label for="name">name:</label>
+            <input type="text" id="name" placeholder=" enter your name "><br>
+            <label for="id_sec">secretary id:</label>
+            <input type="text" placeholder="enter id of sec" id="id_sec" maxlength="4" pattern="\d{4}" required><br>
+            <label for="password">password:</label>
+            <input type="password" placeholder="enetr a password" id="password" maxlength="6" pattern="\d{6}"
+                required><br>
+            <label for="verify">confirm password:</label>
+            <input type="password" placeholder="enter confirm password" id="verify" maxlength="6" pattern="\d{6}"
+                required><br>
+            <label for="phone">phone number:</label>
+            <input type="tel" placeholder="enter your phone " id="phone_number" maxlength="10" pattern="\d{10}"
+                required><br>
+            <label for="email">email:</label>
+            <input type="email" placeholder="enter your email" id="email" required><br>
+            <button onclick="addSec()">add</button>
+        </fieldset><br><br>
+    </template>
+    <template id="add_task">
+        <fieldset>
+            <legend>add task to secretary</legend>
+            <!-- <form action="add_task"> -->
+            <label for="end_date">end date :</label>
+            <input type="date" id="end_date" name="end_date"><br>
+            <label for="id_sec">secretary id:</label>
+            <input type="text" placeholder="enter id of sec" id="id_task" maxlength="4" pattern="\d{4}" required><br>
+            <label for="title">title task: </label>
+            <input type="text" placeholder="enter title for the task" id="title" name="title" required>
+            <p>is the task are urgent?</p>
+            <label><input type="radio" name="is_urgent" value="true" >yes</label>
+            <label><input type="radio" name="is_urgent" value="false" checked>no</label><br>
+            <label for="text_task">the task:</label><br>
+            <textarea id="text_task" placeholder="enter the task" rows="4" cols="50" required></textarea><br>
+            <button onclick="addTask()">send</button>
+            <!-- </form> -->
+        </fieldset><br><br>
+    </template>
+    <template id="show_all_sec">
+      <p>loading...</p>
+    </template>
+    <template id="show_sec">
+        <fieldset>
+            <legend>to get all task of secretary</legend>
+            <label for="id_ofOneSec">secretary id:</label>
+            <input type="text" placeholder="enter id of sec" id="id_ofOneSec" maxlength="4" pattern="\d{4}"
+                required><br>
+            <button onclick="showSec(null)">show secretary</button>
+        </fieldset><br><br>
+    </template>
+    <template id="remove_sec">
+        <fieldset>
+            <legend>to remove secretary</legend>
+            <label for="id_sec">secretary id:</label>
+            <input type="text" placeholder="enter id of sec" id="remove_id" maxlength="4" pattern="\d{4}"
+                required><br>
+            <button onclick="removeSec()">remove secretary</button>
+        </fieldset><br><br>
+    </template>
+    <template id="change_sec">
+        <fieldset >
+            <legend>to change secretary</legend>
+            <label for="name">name:</label>
+            <input type="text" id="changedName"><br>
+            <label for="id_sec">secretary id:</label>
+            <input type="text" id="changedId" readonly><br>
+            <label for="password">password:</label>
+            <input type="password" id="changedPassword" maxlength="6" pattern="\d{6}"required><br>
+            <label for="verify">confirm password:</label>
+            <input type="password" id="changedVerify" maxlength="6" pattern="\d{6}"required><br>
+            <label for="phone">phone number:</label>
+            <input type="tel" id="changedPhone" maxlength="10" pattern="\d{10}"required><br>
+            <label for="email">email:</label>
+            <input type="email" id="changedEmail" required><br>
+            <button onclick="changeSec()">cange</button>
+        </fieldset><br><br>
+    </template>
+    <template id="show_all_task">
+        <p>loading...</p>
+    </template>
+    <template id="chang_task">
+        <h6>sorry, we are still making it for you!</h6>
+    </template>
+     <template id="change_profile">
+        <fieldset>
+            <legend>to change maneger details</legend>
+            <label for="name">name:</label>
+            <input type="text" id="manName"><br>
+            <label for="id_sec">maneger id:</label>
+            <input type="text"  id="manId" readonly><br>
+            <label for="password">password:</label>
+            <input type="text" id="manPassword" maxlength="6" pattern="\d{6}"required><br>
+            <label for="verify">confirm password:</label>
+            <input type="text" id="manVerify" maxlength="6" pattern="\d{6}"required><br>
+            <button id="chang_maneger_details">save changes</button>
+        </fieldset><br><br>
+    </template>
+
+
+</body>
+<script src="../js/site.js"></script>
+<script src="../js/actions.js"></script>
+<script src="../js/classes.js"></script>
+<script src="../../DNS server/dns.js"></script>
+<script src="../../net/fajax.js"></script>
+<script src="../../net/net.js"></script>
+<script src="../../server_tasks/server_task.js"></script>
+<script src="../../server_users/serverUser.js"></script>
+<script src="../../DataBase/tasks_database.js"></script>
+<script src="../../DataBase/users_database.js"></script>
+<script src="../../client/js/sort.js"></script>
+
+
+
+</html>
